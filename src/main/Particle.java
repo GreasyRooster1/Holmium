@@ -1,5 +1,7 @@
 package main;
 
+import processing.core.PConstants;
+
 public class Particle {
     private float x;
     private float y;
@@ -27,7 +29,9 @@ public class Particle {
         }else{
             passiveMove();
         }
-        collision();
+        if(doCollision) {
+            collision();
+        }
     }
     public void passiveMove(){
 
@@ -36,8 +40,13 @@ public class Particle {
 
     }
     public void velUpdate(){
-        x+=xvel;
-        y+=yvel;
+        if(Main.app.mousePressed&&Main.app.mouseButton==PConstants.RIGHT){
+            x-=xvel;
+            y-=yvel;
+        }else {
+            x += xvel;
+            y += yvel;
+        }
         xvel*=drag;
         yvel*=drag;
     }
