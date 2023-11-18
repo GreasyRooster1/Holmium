@@ -1,5 +1,6 @@
 package main;
 
+import main.Particles.BasicParticle;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
@@ -11,10 +12,14 @@ public class Main extends PApplet {
     public void setup(){
         Main.app = this;
         mainUniverse = new Universe();
-        mainUniverse.add(1000);
+        for(int i=0;i<10000;i++){
+            mainUniverse.addParticle(new BasicParticle(random(width),random(height)));
+        }
+        colorMode(HSB,255,255,255);
     }
     public void draw(){
-        background(0);
+        fill(0,50);
+        rect(0,0,width,height);
         mainUniverse.update();
     }
     public static void main(String[] args) {
