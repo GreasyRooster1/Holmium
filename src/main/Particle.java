@@ -40,13 +40,8 @@ public class Particle {
 
     }
     public void velUpdate(){
-        if(Main.app.mousePressed&&Main.app.mouseButton==PConstants.RIGHT){
-            x-=xvel;
-            y-=yvel;
-        }else {
-            x += xvel;
-            y += yvel;
-        }
+        x += xvel;
+        y += yvel;
         xvel*=drag;
         yvel*=drag;
     }
