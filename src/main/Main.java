@@ -1,5 +1,6 @@
 package main;
 
+import main.Particles.SprayParticle;
 import main.Particles.VortexParticle;
 import processing.core.PApplet;
 
@@ -12,12 +13,13 @@ public class Main extends PApplet {
     public void setup(){
         Main.app = this;
         mainUniverse = new Universe();
-        for(int i=0;i<5000;i++){
-            mainUniverse.addParticle(new VortexParticle(random(width),random(height)));
+        for(int i=0;i<10000;i++){
+            mainUniverse.addParticle(new SprayParticle(random(width),random(height)));
         }
         colorMode(HSB,255,255,255);
     }
     public void draw(){
+        noStroke();
         fill(0,50);
         rect(0,0,width,height);
         mainUniverse.update();
