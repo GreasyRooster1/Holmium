@@ -1,6 +1,7 @@
 package main;
 
 import main.Particles.*;
+import main.Worlds.RainbowWorld;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
@@ -12,9 +13,7 @@ public class Main extends PApplet {
     public void setup(){
         Main.app = this;
         mainUniverse = new Universe();
-        for(int i=0;i<10000;i++){
-            mainUniverse.addParticle(new StarParticle(random(width),random(height)));
-        }
+        mainUniverse.setWorld("rainbowWorld");
         colorMode(HSB,255,255,255);
     }
     public void draw(){

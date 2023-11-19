@@ -26,7 +26,7 @@ public class BasicParticle extends Particle {
         Main.app.ellipse(getX(),getY(),getSize(),getSize());
         Main.app.stroke((Main.app.frameCount%255)+colOff,255,255);
         Main.app.strokeWeight(getSize());
-        if(life<495) {
+        if(life<500) {
             Main.app.line(getX(), getY(), px, py);
         }
     }
@@ -34,11 +34,11 @@ public class BasicParticle extends Particle {
         px = getX();
         py = getY();
         setDrag(0.97f);
-        float dir = atan2(Main.app.mouseY-getY(),Main.app.mouseX-getX())+Main.app.random(0.1f);
+        float dir = atan2(Main.app.mouseY-getY(),Main.app.mouseX-getX())+Main.app.random(0.3f);
         float mag = evalMag();
         setXvel(getXvel()+cos(dir)*mag);
         setYvel(getYvel()+sin(dir)*mag);
-        life--;
+        //life--;
         if(life<1){
             setX(Main.app.random(Main.app.width));
             setY(Main.app.random(Main.app.height));
