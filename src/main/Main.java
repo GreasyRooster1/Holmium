@@ -1,9 +1,6 @@
 package main;
 
-import main.Particles.BasicParticle;
-import main.Particles.ForceParticles;
-import main.Particles.SprayParticle;
-import main.Particles.VortexParticle;
+import main.Particles.*;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
@@ -16,7 +13,7 @@ public class Main extends PApplet {
         Main.app = this;
         mainUniverse = new Universe();
         for(int i=0;i<10000;i++){
-            mainUniverse.addParticle(new ForceParticles(random(width),random(height)));
+            mainUniverse.addParticle(new StarParticle(random(width),random(height)));
         }
         colorMode(HSB,255,255,255);
     }
