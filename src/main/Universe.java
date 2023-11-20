@@ -23,6 +23,7 @@ public class Universe {
         addWorld(new SprayWorld("sprayWorld"));
         addWorld(new StarWorld("starWorld"));
         addWorld(new VortexWorld("vortexWorld"));
+        addWorld(new PathWorld("pathWorld"));
     }
     public void addWorld(World w){
         w.setup();

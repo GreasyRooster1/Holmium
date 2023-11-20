@@ -55,6 +55,8 @@ public class SprayParticle extends Particle {
             float mag =(dist(getX(),getY(),Main.app.width/2,Main.app.height/2)/15)+2;
             setXvel(getXvel()+cos(dir)*mag);
             setYvel(getYvel()+sin(dir)*mag);
+            setXvel(getXvel()+Main.app.random(-2,2));
+            setYvel(getYvel()+Main.app.random(-2,2));
             renderLine=false;
             life= (int) Main.app.random(170,230);
         }

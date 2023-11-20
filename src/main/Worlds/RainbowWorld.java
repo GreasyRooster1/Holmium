@@ -2,7 +2,7 @@ package main.Worlds;
 
 import main.Main;
 import main.Particles.BasicParticle;
-import main.Particles.StarParticle;
+import main.Particles.PathParticle;
 import main.World;
 
 public class RainbowWorld extends World {
