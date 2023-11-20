@@ -23,4 +23,9 @@ public class World {
             p.update();
         }
     }
+
+    public void reset(){
+        particles = new Particle[0];
+        setup();
+    }
 }

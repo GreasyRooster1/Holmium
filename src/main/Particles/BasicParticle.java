@@ -7,13 +7,11 @@ import static main.Util.hsv;
 import static processing.core.PApplet.*;
 
 public class BasicParticle extends Particle {
-    public int life = 100;
     public int colOff;
     public float px,py;
     public BasicParticle(float x, float y) {
         super(x, y);
         setDrag(0.95f);
-        life = (int) Main.app.random(2000);
         colOff = (int) Main.app.random(20);
         setSize(3);
         setDoCollision(true);
@@ -26,9 +24,7 @@ public class BasicParticle extends Particle {
         Main.app.ellipse(getX(),getY(),getSize(),getSize());
         Main.app.stroke((Main.app.frameCount%255)+colOff,255,255);
         Main.app.strokeWeight(getSize());
-        if(life<500) {
-            Main.app.line(getX(), getY(), px, py);
-        }
+        Main.app.line(getX(), getY(), px, py);
     }
     public void activeMove(){
         px = getX();
@@ -38,14 +34,6 @@ public class BasicParticle extends Particle {
         float mag = evalMag();
         setXvel(getXvel()+cos(dir)*mag);
         setYvel(getYvel()+sin(dir)*mag);
-        //life--;
-        if(life<1){
-            setX(Main.app.random(Main.app.width));
-            setY(Main.app.random(Main.app.height));
-            setXvel(0);
-            setYvel(0);
-            life =500;
-        }
     }
 
     @Override
