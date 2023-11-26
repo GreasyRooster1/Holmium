@@ -1,10 +1,13 @@
 package main;
 
+import processing.opengl.PShader;
+
 import static processing.core.PApplet.append;
 
 public class World {
     public String name;
     public Particle[] particles ={};
+    public PShader shader;
 
     public World(String name){
         this.name = name;
@@ -19,6 +22,9 @@ public class World {
     }
 
     public void update() {
+        if(shader !=null) {
+            Main.app.shader(shader);
+        }
         for(Particle p:particles){
             p.update();
         }

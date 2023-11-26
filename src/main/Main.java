@@ -9,8 +9,9 @@ public class Main extends PApplet {
     public Universe mainUniverse;
     public int worldId = 0;
     public void settings(){
-        //size(1000,1000);
-        fullScreen();
+        size(1000,1000);
+        //fullScreen();
+
     }
     public void setup(){
         Main.app = this;
@@ -22,6 +23,7 @@ public class Main extends PApplet {
         noStroke();
         fill(0,50);
         rect(0,0,width,height);
+        //background(0);
         mainUniverse.update();
     }
     public void keyReleased(){

@@ -24,6 +24,7 @@ public class Universe {
         addWorld(new StarWorld("starWorld"));
         addWorld(new VortexWorld("vortexWorld"));
         addWorld(new PathWorld("pathWorld"));
+        addWorld(new BurstWorld("burstWorld"));
     }
     public void addWorld(World w){
         w.setup();

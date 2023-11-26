@@ -50,6 +50,7 @@ public class BasicParticle extends Particle {
     private float evalMag(){
         float distance = dist(Main.app.mouseX,Main.app.mouseY,getX(),getY());
         float adjustedDistanceSqr=pow(distance/10,3);
+        //float adjustedDistanceSqr = distance;
         float magAdjusted = adjustedDistanceSqr/100000;
         float minMaxAdjusted=max(magAdjusted,0.5f);
         return minMaxAdjusted;

@@ -11,7 +11,7 @@ public class PathWorld extends World {
 
     @Override
     public void setup() {
-        for(int i=0;i<10000;i++){
+        for(int i=0;i<5000;i++){
             addParticle(new PathParticle(Main.app.random(Main.app.width), Main.app.random(Main.app.height)));
         }
     }
