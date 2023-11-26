@@ -13,6 +13,8 @@ public class Particle {
     private float size;
     private boolean doCollision;
     private World world;
+    private float px;
+    private float py;
     public Particle(float x,float y,World w){
         this.setX(x);
         this.setY(y);
@@ -30,6 +32,8 @@ public class Particle {
         Main.app.ellipse(getX(),getY(),getSize(),getSize());
     }
     public void move(){
+        px=getX();
+        py=getY();
         velUpdate();
         if(Main.app.mousePressed) {
             activeMove();
@@ -79,10 +83,15 @@ public class Particle {
         yvel+=vec.y;
     }
 
-    public void renderCircular(int col, float size){
-        Main.app.fill((Main.app.frameCount%255),255,255);
+    public void renderCircular(int col){
+        Main.app.fill(col);
         Main.app.noStroke();
         Main.app.ellipse(getX(),getY(),getSize(),getSize());
+    }
+    public void renderLine(int col){
+        Main.app.stroke(col);
+        Main.app.strokeWeight(getSize());
+        Main.app.line(getX(), getY(), px, py);
     }
 
     public float getX() {
@@ -147,5 +156,21 @@ public class Particle {
 
     public void setWorld(World world) {
         this.world = world;
+    }
+
+    public float getPx() {
+        return px;
+    }
+
+    public void setPx(float px) {
+        this.px = px;
+    }
+
+    public float getPy() {
+        return py;
+    }
+
+    public void setPy(float py) {
+        this.py = py;
     }
 }

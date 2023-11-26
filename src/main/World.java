@@ -34,4 +34,7 @@ public class World {
         particles = new Particle[0];
         setup();
     }
+    public int size(){
+        return particles.length;
+    }
 }
