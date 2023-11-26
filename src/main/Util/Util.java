@@ -1,4 +1,4 @@
-package main;
+package main.Util;
 
 import static java.lang.Integer.parseInt;
 import static processing.core.PApplet.println;

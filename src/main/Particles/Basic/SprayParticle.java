@@ -1,7 +1,8 @@
-package main.Particles;
+package main.Particles.Basic;
 
 import main.Main;
 import main.Particle;
+import main.World;
 
 import static java.lang.Math.random;
 import static processing.core.PApplet.*;
@@ -13,8 +14,8 @@ public class SprayParticle extends Particle {
     public float px,py;
     boolean renderLine = true;
     int life;
-    public SprayParticle(float x, float y) {
-        super(x, y);
+    public SprayParticle(float x, float y, World w) {
+        super(x, y,w);
         setDrag(0.95f);
         colOff = (int) Main.app.random(30);
         colVal = -100;

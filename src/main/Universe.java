@@ -1,7 +1,8 @@
 package main;
 
 import main.Menu.Constellation;
-import main.Worlds.*;
+import main.Worlds.Basic.*;
+import main.Worlds.Simulation.GasWorld;
 
 import java.time.Instant;
 
@@ -25,6 +26,8 @@ public class Universe {
         addWorld(new VortexWorld("vortexWorld"));
         addWorld(new PathWorld("pathWorld"));
         addWorld(new BurstWorld("burstWorld"));
+
+        addWorld(new GasWorld("gasWorld"));
     }
     public void addWorld(World w){
         w.setup();

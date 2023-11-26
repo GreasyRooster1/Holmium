@@ -1,7 +1,8 @@
-package main.Particles;
+package main.Particles.Basic;
 
 import main.Main;
 import main.Particle;
+import main.World;
 
 import static processing.core.PApplet.*;
 import static processing.core.PApplet.max;
@@ -11,8 +12,8 @@ public class VortexParticle extends Particle {
     public int colVal;
     public float px,py;
     boolean renderLine = true;
-    public VortexParticle(float x, float y) {
-        super(x, y);
+    public VortexParticle(float x, float y, World w) {
+        super(x, y,w);
         setDrag(0.95f);
         colOff = (int) Main.app.random(30);
         colVal = -100;

@@ -1,7 +1,5 @@
 package main;
 
-import main.Particles.*;
-import main.Worlds.RainbowWorld;
 import processing.core.PApplet;
 
 public class Main extends PApplet {

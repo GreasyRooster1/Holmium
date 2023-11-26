@@ -1,7 +1,8 @@
-package main.Particles;
+package main.Particles.Basic;
 
 import main.Main;
 import main.Particle;
+import main.World;
 
 import static processing.core.PApplet.*;
 
@@ -9,8 +10,8 @@ public class StarParticle extends Particle {
     public int life = 100;
     public int colOff;
     public float px,py;
-    public StarParticle(float x, float y) {
-        super(x, y);
+    public StarParticle(float x, float y, World w) {
+        super(x, y,w);
         setDrag(0.95f);
         life = (int) Main.app.random(2000);
         colOff = (int) Main.app.random(3);

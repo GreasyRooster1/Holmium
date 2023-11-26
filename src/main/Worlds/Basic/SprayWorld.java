@@ -1,9 +1,8 @@
-package main.Worlds;
+package main.Worlds.Basic;
 
 
 import main.Main;
-import main.Particles.SprayParticle;
-import main.Particles.VortexParticle;
+import main.Particles.Basic.SprayParticle;
 import main.World;
 
 public class SprayWorld extends World {
@@ -14,7 +13,7 @@ public class SprayWorld extends World {
     @Override
     public void setup() {
         for(int i=0;i<5000;i++){
-            addParticle(new SprayParticle(Main.app.random(Main.app.width), Main.app.random(Main.app.height)));
+            addParticle(new SprayParticle(Main.app.random(Main.app.width), Main.app.random(Main.app.height),this));
         }
     }
 }

@@ -1,8 +1,7 @@
-package main.Worlds;
+package main.Worlds.Basic;
 
 import main.Main;
-import main.Particles.ForceParticles;
-import main.Particles.VortexParticle;
+import main.Particles.Basic.ForceParticles;
 import main.World;
 
 public class ForceWorld extends World {
@@ -13,7 +12,7 @@ public class ForceWorld extends World {
     @Override
     public void setup() {
         for(int i=0;i<5000;i++){
-            addParticle(new ForceParticles(Main.app.random(Main.app.width), Main.app.random(Main.app.height)));
+            addParticle(new ForceParticles(Main.app.random(Main.app.width), Main.app.random(Main.app.height),this));
         }
     }
 }

@@ -1,16 +1,16 @@
-package main.Particles;
+package main.Particles.Basic;
 
 import main.Main;
 import main.Particle;
+import main.World;
 
-import static main.Util.hsv;
 import static processing.core.PApplet.*;
 
 public class BasicParticle extends Particle {
     public int colOff;
     public float px,py;
-    public BasicParticle(float x, float y) {
-        super(x, y);
+    public BasicParticle(float x, float y, World w) {
+        super(x, y,w);
         setDrag(0.95f);
         colOff = (int) Main.app.random(20);
         setSize(3);

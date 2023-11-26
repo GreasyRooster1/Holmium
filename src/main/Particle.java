@@ -1,6 +1,10 @@
 package main;
 
+import main.Util.Vec;
 import processing.core.PConstants;
+
+import static processing.core.PApplet.cos;
+import static processing.core.PApplet.sin;
 
 public class Particle {
     private float x;
@@ -8,22 +12,25 @@ public class Particle {
     private float xvel,yvel,drag;
     private float size;
     private boolean doCollision;
-    public Particle(float x,float y){
+    private World world;
+    public Particle(float x,float y,World w){
         this.setX(x);
         this.setY(y);
         setDrag(1);
         setSize(5);
         doCollision =false;
+        world = w;
     }
     public void update(){
         move();
-        velUpdate();
         render();
+        always();
     }
     public void render(){
         Main.app.ellipse(getX(),getY(),getSize(),getSize());
     }
     public void move(){
+        velUpdate();
         if(Main.app.mousePressed) {
             activeMove();
         }else{
@@ -37,6 +44,9 @@ public class Particle {
 
     }
     public void activeMove(){
+
+    }
+    public void always(){
 
     }
     public void velUpdate(){
@@ -58,6 +68,21 @@ public class Particle {
         if(y>Main.app.height){
             y=Main.app.height;
         }
+    }
+
+    public void velocityDir(float dir,float mag){
+        xvel+=cos(dir)*mag;
+        yvel+=sin(dir)*mag;
+    }
+    public void velocityVec(Vec vec){
+        xvel+=vec.x;
+        yvel+=vec.y;
+    }
+
+    public void renderCircular(int col, float size){
+        Main.app.fill((Main.app.frameCount%255),255,255);
+        Main.app.noStroke();
+        Main.app.ellipse(getX(),getY(),getSize(),getSize());
     }
 
     public float getX() {
@@ -114,5 +139,13 @@ public class Particle {
 
     public void setDoCollision(boolean doCollision) {
         this.doCollision = doCollision;
+    }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
     }
 }

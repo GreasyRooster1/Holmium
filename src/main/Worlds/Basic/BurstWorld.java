@@ -1,8 +1,7 @@
-package main.Worlds;
+package main.Worlds.Basic;
 
 import main.Main;
-import main.Particles.BurstParticle;
-import main.Particles.ForceParticles;
+import main.Particles.Basic.BurstParticle;
 import main.World;
 
 public class BurstWorld extends World {
@@ -12,7 +11,7 @@ public class BurstWorld extends World {
     @Override
     public void setup() {
         for(int i=0;i<5000;i++){
-            addParticle(new BurstParticle(Main.app.random(Main.app.width), Main.app.random(Main.app.height)));
+            addParticle(new BurstParticle(Main.app.random(Main.app.width), Main.app.random(Main.app.height),this));
         }
     }
 }

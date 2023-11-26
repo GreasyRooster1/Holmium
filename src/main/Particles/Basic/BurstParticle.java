@@ -1,7 +1,8 @@
-package main.Particles;
+package main.Particles.Basic;
 
 import main.Main;
 import main.Particle;
+import main.World;
 
 import static processing.core.PApplet.*;
 import static processing.core.PApplet.max;
@@ -15,8 +16,8 @@ public class BurstParticle extends Particle {
     float life;
     private boolean renderLine=true;
 
-    public BurstParticle(float x, float y) {
-        super(x, y);
+    public BurstParticle(float x, float y, World w) {
+        super(x, y,w);
         setDrag(0.99f);
 
         setSize(3);
