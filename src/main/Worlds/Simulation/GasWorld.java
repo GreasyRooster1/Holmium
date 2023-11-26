@@ -12,8 +12,9 @@ public class GasWorld extends SimulationWorld {
 
     @Override
     public void setup() {
-        populateSim(20,20,0f);
+        populateSim(40,40,0f);
         decayAmount = 0.99f;
+        //showSimCells = true;
         for(int i=0;i<5000;i++){
             addParticle(new GasParticle(Main.app.random(Main.app.width), Main.app.random(Main.app.height),this));
         }

@@ -30,4 +30,12 @@ public class Vec {
     public float dir() {
         return atan2(y,x);
     }
+
+    public Vec invert(){
+        return new Vec(-x,-y);
+    }
+
+    public Vec mult(int v) {
+        return new Vec(x*v,y*v);
+    }
 }

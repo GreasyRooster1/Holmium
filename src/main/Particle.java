@@ -72,6 +72,12 @@ public class Particle {
         if(y>Main.app.height){
             y=Main.app.height;
         }
+        if(x<0){
+            x=0;
+        }
+        if(y<0){
+            y=0;
+        }
     }
 
     public void velocityDir(float dir,float mag){

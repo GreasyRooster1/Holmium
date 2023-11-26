@@ -47,6 +47,10 @@ public class SimulationParticle extends Particle{
     public void changeSimCellAtPosOff(int x,int y,float value){
         int px = floor((getX()/Main.app.width)*getWorld().width)+x;
         int py = floor((getY()/Main.app.height)*getWorld().height)+y;
+        px = max(0,px);
+        py = max(0,py);
+        px = min(getWorld().width-1, px);
+        py = min(getWorld().height-1, py);
         getWorld().simCells[py*getWorld().width+px]+=value;
     }
     public float getSimCellAtPosOff(int x,int y){

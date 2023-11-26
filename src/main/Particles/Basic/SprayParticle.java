@@ -39,7 +39,7 @@ public class SprayParticle extends Particle {
         }
         colVal++;
         if(renderLine) {
-            Main.app.line(getX(), getY(), px, py);
+            Main.app.line(getX(), getY(), getPx(), getPy());
         }else{
             renderLine=true;
         }

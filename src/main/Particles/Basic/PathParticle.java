@@ -26,7 +26,7 @@ public class PathParticle extends Particle {
         Main.app.ellipse(getX(),getY(),getSize(),getSize());
         Main.app.stroke(col,255,255);
         Main.app.strokeWeight(getSize());
-        Main.app.line(getX(), getY(), px, py);
+        Main.app.line(getX(), getY(), getPx(), getPy());
     }
     public void activeMove(){
         px = getX();

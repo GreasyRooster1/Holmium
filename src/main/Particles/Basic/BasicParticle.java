@@ -24,7 +24,7 @@ public class BasicParticle extends Particle {
         Main.app.ellipse(getX(),getY(),getSize(),getSize());
         Main.app.stroke((Main.app.frameCount%255)+colOff,255,255);
         Main.app.strokeWeight(getSize());
-        Main.app.line(getX(), getY(), px, py);
+        Main.app.line(getX(), getY(), getPx(), getPy());
     }
     public void activeMove(){
         px = getX();

@@ -34,7 +34,7 @@ public class BurstParticle extends Particle {
         if(renderLine) {
             Main.app.stroke(col);
             Main.app.strokeWeight(getSize());
-            Main.app.line(getX(), getY(), px, py);
+            Main.app.line(getX(), getY(), getPx(), getPy());
         }
     }
     public void activeMove(){
