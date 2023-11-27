@@ -1,6 +1,6 @@
 package main;
 
-import main.Menu.Constellation;
+import main.Menu.Menu;
 import main.Worlds.Basic.*;
 import main.Worlds.Simulation.GasWorld;
 
@@ -9,11 +9,13 @@ import java.time.Instant;
 import static processing.core.PApplet.append;
 
 public class Universe {
-    private float id;
+    private final float id;
 
     public World[] worlds ={};
     public World currentWorld;
-    public Constellation constellation = new Constellation((float)Main.app.width/2,75);
+    public Menu menu = new Menu();
+    public boolean inMenu = false;
+
     Universe(){
         id = Instant.now().toEpochMilli()+Main.app.random(Integer.MAX_VALUE);
         registerWorlds();
@@ -48,7 +50,10 @@ public class Universe {
     }
 
     public void update() {
-        currentWorld.update();
-        //constellation.update();
+        if(inMenu){
+            menu.update();
+        }else {
+            currentWorld.update();
+        }
     }
 }

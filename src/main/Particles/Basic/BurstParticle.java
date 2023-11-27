@@ -20,14 +20,14 @@ public class BurstParticle extends Particle {
         super(x, y,w);
         setDrag(0.99f);
 
-        setSize(3);
+        setSize(4);
         setDoCollision(true);
         burstGroup = (int)Main.app.random(maxBurst);
         colOff = (int) Main.app.random(20)+burstGroup*(255/maxBurst);
     }
     public void render() {
         float mag = sqrt(pow(getXvel(),2)+pow(getYvel(),2));
-        int col = Main.app.color(((Main.app.frameCount%255)+colOff)%255,255, life*(255f/80), life*(255f/80));
+        int col = Main.app.color(((Main.app.frameCount%255)+colOff)%255,255, 255);
         Main.app.fill(col);
         Main.app.noStroke();
         Main.app.ellipse(getX(),getY(),getSize(),getSize());

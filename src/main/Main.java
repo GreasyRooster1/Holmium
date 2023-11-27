@@ -18,6 +18,7 @@ public class Main extends PApplet {
         colorMode(HSB,255,255,255);
     }
     public void draw(){
+        cursor();
         noStroke();
         fill(0,50);
         rect(0,0,width,height);
@@ -32,6 +33,9 @@ public class Main extends PApplet {
         if(key=='d'&&worldId<mainUniverse.worlds.length-1){
             worldId++;
             mainUniverse.setWorld(worldId);
+        }
+        if(key==' '){
+            mainUniverse.inMenu = !mainUniverse.inMenu;
         }
 
     }
